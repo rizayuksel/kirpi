@@ -6,7 +6,7 @@ from kirpi.trailers.models import Trailer
 # Register your models here.
 
 @register(Trailer)
-class CandidateUserCommentAdmin(ModelAdmin):
+class TrailerAdmin(ModelAdmin):
     list_display = [
         "id",
         "name",
