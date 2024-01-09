@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third Party Modules
+    "rest_framework",
+    "django_filters",
 
     # App Modules
     "kirpi.accounts",
