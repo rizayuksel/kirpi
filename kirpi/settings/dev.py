@@ -11,3 +11,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Admin Settings
+GRAPPELLI_ADMIN_TITLE = "DEVELOPMENT"
+ENVIRONMENT_NAME = "DEVELOPMENT"

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "grappelli",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -74,6 +75,8 @@ TEMPLATES = [
         },
     },
 ]
+
+GRAPPELLI_ADMIN_TITLE = "Control Panel"
 
 WSGI_APPLICATION = 'kirpi.wsgi.application'
 
