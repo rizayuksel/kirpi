@@ -20,5 +20,5 @@ from django.urls import include, path
 urlpatterns = [
     path("cp-grappelli/", include("grappelli.urls")),  # grappelli URLS
     path("cp/", admin.site.urls),
-    path('admin/', admin.site.urls),
+    path("api/", include("kirpi.accounts.urls")),
 ]
