@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "kirpi.accounts",
     "kirpi.core",
     "kirpi.trailers",
+    "kirpi.paramaters",
 ]
 
 MIDDLEWARE = [
