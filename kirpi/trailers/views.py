@@ -1,5 +1,8 @@
+from datetime import datetime
+from decimal import Decimal
 from typing import TYPE_CHECKING
 
+from kirpi.paramaters.models import Price
 from kirpi.trailers.models import Trailer
 from kirpi.trailers.serializers import DetailTrailerSerializer, ListTrailersSerializer
 
@@ -34,6 +37,26 @@ class DetailTrailerView(RetrieveUpdateAPIView):
 
     def get_queryset(self) -> "QuerySet[Trailer]":
         return Trailer.objects.filter(id=self.kwargs["pk"])
+    
+    def patch(self, request, *args, **kwargs):
+        trailer = Trailer.objects.get(id=self.kwargs["pk"])
+        trailer.last_date = trailer.date
+        trailer.last_t0 = trailer.t0
+        trailer.last_t1 = trailer.t1
+        trailer.last_t2 = trailer.t2
+        trailer.last_t3 = trailer.t3
+        trailer.last_ri = trailer.ri
+        trailer.last_rc = trailer.rc
+        trailer.t0 = Decimal(request.data["t0"])
+        trailer.t1 = Decimal(request.data["t1"])
+        trailer.t2 = Decimal(request.data["t2"])
+        trailer.t3 = Decimal(request.data["t3"])
+        trailer.ri = Decimal(request.data["ri"])
+        trailer.rc = Decimal(request.data["rc"])
+        trailer.date = datetime.now()
+        trailer.price = (trailer.t0 - trailer.last_t0) * Price.objects.first().price
+        trailer.save()
+        return Response(data=trailer.serial_number, status=HTTP_200_OK)
 
 
 class TrailerCountView(APIView):
