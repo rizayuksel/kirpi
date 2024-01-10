@@ -13,6 +13,7 @@ class ListTrailersSerializer(ModelSerializer):
             "created_at",
         ]
 
+
 class DetailTrailerSerializer(ModelSerializer):
 
     class Meta:
