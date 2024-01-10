@@ -21,4 +21,5 @@ urlpatterns = [
     path("cp-grappelli/", include("grappelli.urls")),  # grappelli URLS
     path("cp/", admin.site.urls),
     path("api/", include("kirpi.accounts.urls")),
+    path("api/", include("kirpi.trailers.urls")),
 ]
