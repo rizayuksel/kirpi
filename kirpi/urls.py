@@ -22,4 +22,5 @@ urlpatterns = [
     path("cp/", admin.site.urls),
     path("api/", include("kirpi.accounts.urls")),
     path("api/", include("kirpi.trailers.urls")),
+    path("api/", include("kirpi.paramaters.urls")),
 ]

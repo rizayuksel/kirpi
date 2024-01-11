@@ -9,7 +9,6 @@ class PriceAdmin(ModelAdmin):
     list_display = [
         "id",
         "price",
-        "created_at",
         "updated_at",
     ]
-    readonly_fields = ["id", "created_at", "updated_at"]
+    readonly_fields = ["id", "updated_at"]
