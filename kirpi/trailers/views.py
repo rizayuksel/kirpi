@@ -73,7 +73,7 @@ class TrailerCountView(APIView):
     def get(self, request, format=None):
         trailer_count = Trailer.objects.filter().count()
         return Response({"trailer_count": trailer_count}, status=HTTP_200_OK)
-
+from reportlab.pdfgen import canvas
 
 class TrailerBillView(View):
     def get(self, request, *args, **kwargs):
@@ -87,6 +87,7 @@ class TrailerBillView(View):
         pdf = SimpleDocTemplate(pdf_buffer, pagesize=letter)
 
         table_data = [
+            ["ELEKTRIK BILDIRIM"],
             ["SERI NUMARASI", trailer.serial_number],
             ["ÖNCEKI SAYAÇ ÖLÇÜM TARIHI", str(trailer.last_date.date())],
             ["ÖNCEKI SAYAÇ ÖLÇÜM DEGERI", trailer.last_t0],
