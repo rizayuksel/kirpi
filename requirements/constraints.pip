@@ -6,6 +6,8 @@
 #
 asgiref==3.7.2
     # via django
+chardet==5.2.0
+    # via reportlab
 django==5.0.1
     # via
     #   -r -
@@ -17,7 +19,11 @@ django-grappelli==3.0.8
     # via -r -
 djangorestframework==3.14.0
     # via -r -
+pillow==10.2.0
+    # via reportlab
 pytz==2023.3.post1
     # via djangorestframework
+reportlab==4.0.9
+    # via -r -
 sqlparse==0.4.4
     # via django
